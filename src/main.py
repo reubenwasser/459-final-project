@@ -5,10 +5,13 @@ from data_cleaning import impute_nulls_cases
 
 
 def main():
-    cases = pd.read_csv("../data/cases_test.csv")
-    #ages_fixed = fix_age(cases)
-    imputed_nulls = impute_nulls_cases(cases)
-    print(imputed_nulls)
+    cases_train = pd.read_csv("../data/cases_train.csv")
+    cases_test = pd.read_csv("../data/cases_test.csv")
+    fix_age(cases_test)
+    fix_age(cases_train)
+    impute_nulls_cases(cases_train)
+    impute_nulls_cases(cases_test)
+
 
 
 if __name__ == "__main__":

@@ -34,12 +34,18 @@ def fix_age(df):
 
     # Convert NaNs to -1 in order to convert column
     df["age"] = df["age"].fillna(-1).astype(float).astype(int)
-    return df
 
 def impute_nulls_cases(df):
     '''
     Imputes null values for all applicable attributes in cases_test/train.csv
     '''
-    #sex
-    df["sex"] = df["sex"]
+
+    df["sex"] = df["sex"].fillna("unknown")
+    df["latitude"] = df["latitude"].fillna(0)
+    df["longitude"] = df["longitude"].fillna("0")
+    df["additional_information"] = df["additional_information"].fillna("none")
+    df["source"] = df["source"].fillna("unknown")
+    df["outcome"] = df["outcome"].fillna("unknown")
+
+
 
