@@ -21,7 +21,11 @@ def main():
     impute_nulls_cases(cases_train)
     impute_nulls_cases(cases_test)
     
-
+    
+    #1.3
+    cases_train = cases_train[ cases_train.age < 100]
+    
+    
     #1.4
     dataLocationTrans = transform(cases_location)
     dataLocationTrans.to_csv("../results/location_transformed.csv", index = False)
@@ -31,6 +35,6 @@ def main():
     mergeTrainDF = merge( dataLocationTrans,cases_train )
     mergeTestDF.to_csv("../results/cases_test_processed.csv", index = False)
     mergeTrainDF.to_csv("../results/cases_train_processed.csv", index = False)
-
+    
 if __name__ == "__main__":
     main()
