@@ -23,6 +23,7 @@ def main():
     
     
     #1.3
+    
     cases_train = cases_train[ cases_train.age < 100]
     
     
@@ -31,10 +32,14 @@ def main():
     dataLocationTrans.to_csv("../results/location_transformed.csv", index = False)
     
     #1.5
+    print(len(cases_train))
+    print(len(cases_test))
     mergeTestDF = merge( dataLocationTrans,cases_test)
     mergeTrainDF = merge( dataLocationTrans,cases_train )
     mergeTestDF.to_csv("../results/cases_test_processed.csv", index = False)
     mergeTrainDF.to_csv("../results/cases_train_processed.csv", index = False)
+    print(len(mergeTrainDF))
+    print(len(mergeTestDF))
     
 if __name__ == "__main__":
     main()

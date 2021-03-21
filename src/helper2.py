@@ -100,5 +100,5 @@ def merge(dataLocationTrans,dataCase):
                     combDF.at[ i,'Incidence_Rate'] = dataLocationTrans.loc[dataLocationTrans.Combined_Key == location,'Incidence_Rate'].tolist()[0]
                 
     #drop values with missing location data -> ~8% of actual data            
-    combDF  = combDF.dropna(how='any', subset=['Confirmed'])
+    #combDF  = combDF.dropna(how='any', subset=['Confirmed'])
     return combDF
